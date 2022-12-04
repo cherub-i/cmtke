@@ -1,0 +1,46 @@
+@startuml
+
+package Stammdaten {
+
+  package Firmenstammdaten {
+    class Produkt {
+      bezeichnung : String
+      version : int
+      typ : int
+    }
+
+    package Stueckliste {    
+      class StuecklisteElement {
+        id : int
+        position : String
+        status : StEStatus
+      }
+
+      enum StEStatus {
+        A : Angelegt
+        B : Bestätigt
+        G : Gelöscht
+      }
+    }
+  }
+
+  package Projektstammdaten {
+    class Gebiet {
+      bezeichnung : String
+      version : int
+    }
+  }
+}
+
+package Bestellungen {
+  class Bestellung {
+    id : int
+  }
+}
+
+class Nutzer {
+  name : String
+  alter : String
+}
+
+@enduml
