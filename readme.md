@@ -1,4 +1,4 @@
-# CMTKE - class modell to keyboard entry
+# CMTKE - class model to keyboard entry
 
 ## What is does
 
