@@ -109,8 +109,8 @@ parsePlantUml(file, byRef packageStructure) {
                 if (currentClassOrEnum.isEnum)
                     currentClassOrEnum.addField(" ".join(word_array), "")
                 else
-                    if (inStr(word_array[1], "()"))
-                        currentClassOrEnum.addOperation(word_array[1], word_array[3])
+                    if (inStr(word_array[2], "()"))
+                        currentClassOrEnum.addOperation(word_array[2], word_array[1])
                     else
                         currentClassOrEnum.addField(word_array[1], word_array[3])
         }
@@ -272,8 +272,8 @@ class MenuGen {
 
         ; menu for each operation in a class
         for i, field in clazz.operations {
-            Menu % clazz.getDescriptiveName(), Add, % field.name ": " field.type, % handlerField
-            Menu % clazz.getDescriptiveName(), Icon, % field.name ": " field.type, % "HICON:" Base64PNG_to_HICON(this.operationIconBase64),, 0
+            Menu % clazz.getDescriptiveName(), Add, % field.name, % handlerField
+            Menu % clazz.getDescriptiveName(), Icon, % field.name, % "HICON:" Base64PNG_to_HICON(this.operationIconBase64),, 0
         }
 
         ; menu for overall functions
